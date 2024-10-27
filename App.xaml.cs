@@ -1,14 +1,15 @@
-﻿using SculptifyBody.SculptifyBody.Mobile.Views;
-
+﻿using SculptifyBody.Mobile.Views;
 namespace SculptifyBody
 {
     public partial class App : Application
     {
-        public App()
+        private readonly IServiceProvider _serviceProvider;
+
+        public App(IServiceProvider serviceProvider)
         {
             InitializeComponent();
-
-            this.MainPage = new MainPage();
+            _serviceProvider = serviceProvider;
+            MainPage = _serviceProvider.GetRequiredService<SplashPage>();
         }
     }
 }
