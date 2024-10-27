@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             x:Class="SculptifyBody.Mobile.Views.SplashPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="2*, *">
+        <!-- Main Content -->
+        <VerticalStackLayout Grid.Row="0" 
+                            Spacing="20" 
+                            Padding="20"
+                            VerticalOptions="Center">
+
+            <!-- App Logo -->
+            <Image Source="app_logo.png"
+                   HeightRequest="120"
+                   WidthRequest="120"
+                   HorizontalOptions="Center"/>
+
+            <!-- App Name -->
+            <Label Text="SculptifyBody"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   TextColor="#34495E"
+                   HorizontalOptions="Center"/>
+
+            <!-- Tagline -->
+            <Label Text="Your AI-Powered Fitness Journey"
+                   FontSize="18"
+                   TextColor="#666666"
+                   HorizontalOptions="Center"/>
+
+            <!-- Features List -->
+            <VerticalStackLayout Spacing="10" 
+                               Margin="0,20,0,0" 
+                               HorizontalOptions="Center">
+                <Label Text="🎯 Personalized AI Training"
+                       FontSize="16"
+                       TextColor="#34495E"/>
+                <Label Text="🥗 Smart Diet Planning"
+                       FontSize="16"
+                       TextColor="#34495E"/>
+                <Label Text="📊 Progress Tracking"
+                       FontSize="16"
+                       TextColor="#34495E"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+
+        <!-- Buttons Section -->
+        <VerticalStackLayout Grid.Row="1" 
+                            Padding="20"
+                            Spacing="15"
+                            VerticalOptions="Center">
+
+            <!-- Get Started Button -->
+            <telerik:RadButton x:Name="GetStartedButton"
+                              Text="Get Started"
+                              Command="{Binding GetStartedCommand}"
+                              BackgroundColor="#2ECC71"
+                              TextColor="White"
+                              CornerRadius="25"
+                              HeightRequest="50"
+                              FontAttributes="Bold"
+                              FontSize="18"/>
+
+            <!-- Login Section -->
+            <StackLayout Orientation="Horizontal" 
+                        HorizontalOptions="Center" 
+                        Spacing="5">
+                <Label Text="Already joined?"
+                       TextColor="#666666"
+                       VerticalOptions="Center"/>
+                <telerik:RadButton Text="Login"
+                                  Command="{Binding LoginCommand}"
+                                  BackgroundColor="Transparent"
+                                  TextColor="#2ECC71"
+                                  FontAttributes="Bold"
+                                  VerticalOptions="Center"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
