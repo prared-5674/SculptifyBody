@@ -1,7 +1,6 @@
-﻿
-using SculptifyBody.SculptifyBody.Mobile.Interfaces;
+﻿using SculptifyBody.SculptifyBody.Mobile.Interfaces;
 
-namespace SculptifyBody.SculptifyBody.Mobile.ViewModel
+namespace SculptifyBody.SculptifyBody.Mobile.Services
 {
     public class NavigationService : INavigationService
     {
@@ -12,7 +11,10 @@ namespace SculptifyBody.SculptifyBody.Mobile.ViewModel
 
         public async Task NavigateBackAsync()
         {
-            await Shell.Current.GoToAsync("..");
+            if (Shell.Current != null)
+            {
+                await Shell.Current.GoToAsync("..");
+            }
         }
     }
 }

@@ -51,16 +51,39 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
 		<PackageReference Include="Telerik.UI.for.Maui" Version="7.1.0" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.3" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.3" />
+        <PackageReference Include="TimeZoneConverter" Version="6.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="SculptifyBody.Mobile\Views\LoginPage.xaml.cs">
+	    <DependentUpon>LoginPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="SculptifyBody.Mobile\Views\SplashPage.xaml.cs">
 	    <DependentUpon>SplashPage.xaml</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Resources\Styles\Themes\Styles.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SculptifyBody.Mobile\ViewAssets\SpinnerPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SculptifyBody.Mobile\Views\ForgotPasswordPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SculptifyBody.Mobile\Views\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SculptifyBody.Mobile\Views\SignUpPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

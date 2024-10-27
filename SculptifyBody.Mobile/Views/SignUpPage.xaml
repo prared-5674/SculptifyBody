@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SculptifyBody.Mobile.Views.SignUpPage"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             Title="Sign Up">
+    <ScrollView>
+        <Grid RowDefinitions="*,auto" Padding="15,0">
+            <StackLayout Grid.Row="0"
+                         Margin="0,50,0,0"
+                         x:Name="CreateAccountLayout"
+                         Orientation="Vertical" VerticalOptions="FillAndExpand"
+                         Spacing="20">
+                <Border Style="{DynamicResource EntryFormBorder}">
+                    <telerik:RadEntry Style="{StaticResource LoginEntryFormEntry}" x:Name="txtEmail" Placeholder="Email Address" Text="{Binding Email}" />
+                </Border>
+                <Border Style="{DynamicResource EntryFormBorder}">
+                    <telerik:RadEntry Style="{StaticResource LoginEntryFormEntry}" x:Name="txtPassword" Placeholder="Password" IsPassword="True" Text="{Binding Password}" />
+                </Border>
+                <Border Style="{DynamicResource EntryFormBorder}">
+                    <telerik:RadEntry Style="{StaticResource LoginEntryFormEntry}" x:Name="txtConfirmPassword" Placeholder="Confirm Password" IsPassword="True" Text="{Binding ConfirmPassword}" />
+                </Border>
+                <Border Style="{DynamicResource EntryFormBorder}">
+                    <telerik:RadEntry Style="{StaticResource LoginEntryFormEntry}" x:Name="txtFirstName" Placeholder="First Name" Text="{Binding FirstName}" />
+                </Border>
+                <Border Style="{DynamicResource EntryFormBorder}">
+                    <telerik:RadEntry Style="{StaticResource LoginEntryFormEntry}" x:Name="txtLastName" Placeholder="Last Name" Text="{Binding LastName}"/>
+                </Border>
+                <Border Style="{DynamicResource EntryFormBorder}">
+                    <telerik:RadEntry Style="{StaticResource LoginEntryFormEntry}" x:Name="txtPhoneNumber" Placeholder="Phone Number (+1-234-567-8901)" 
+                       Keyboard="Telephone" Text="{Binding PhoneNumber}" />
+                </Border>
+
+                <Picker x:Name="pckTimeZone" ItemsSource="{Binding TimeZones}" 
+                        SelectedItem="{Binding TimeZone, Mode=TwoWay}" Margin="20,0,20,0"/>
+
+                <Button x:Name="btnCreateAccount" Text="Sign Up"
+                        Margin="20,0,20,60"
+                        HorizontalOptions="Fill"
+                        FontSize="20" HeightRequest="75"
+                        SemanticProperties.Hint="AWS Cognito Sign In"
+                        Clicked="OnSignUp" />
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="0" IsVisible="False"
+                         Margin="0,40,0,0"
+                         x:Name="ConfirmAccountLayout"
+                         Orientation="Vertical" VerticalOptions="FillAndExpand"
+                         Spacing="20">
+
+                <Label Grid.Row="1"
+                       Text="Account Confirmation"
+                       SemanticProperties.HeadingLevel="Level2"
+                       SemanticProperties.Description="Filtr Account Confirmation"
+                       FontSize="24"
+                       HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                <Entry x:Name="ConfirmCodeEntry" Placeholder="Confirmation Code" />
+
+                <Button x:Name="btnConfirm" Text="Confirm"
+                        HorizontalOptions="Fill"
+                        SemanticProperties.Hint="Sign Up Confirmation"
+                        Clicked="btnConfirm_Clicked" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center"
+                         Padding="10">
+
+                <Label HorizontalOptions="End" FontSize="12" Padding="0" Margin="0" VerticalTextAlignment="Center"
+                       TextColor="{DynamicResource SignUpInfoTextColor}"
+                       Text="Already have an account?" />
+
+                <Label HorizontalOptions="End" FontSize="12"  Padding="0" Margin="10,0" VerticalTextAlignment="Center"
+                       TextColor="{DynamicResource SignInLinkTextColor}"
+                       Text="Sign In">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSignIn"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

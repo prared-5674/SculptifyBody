@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="SculptifyBody.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:SculptifyBody.Mobile.Views">
-    <ShellContent
-        Title="SculptifyBody"
-        ContentTemplate="{DataTemplate local:SplashPage}"
-        Route="splash" />
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:SculptifyBody.Mobile.Views"
+       x:Class="SculptifyBody.AppShell">
+
+    <!-- Define Routes -->
+    <ShellContent Route="SplashPage" ContentTemplate="{DataTemplate views:SplashPage}" />
+    <ShellContent Route="SignUpPage" ContentTemplate="{DataTemplate views:SignUpPage}" />
+    <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}" />
+
 </Shell>

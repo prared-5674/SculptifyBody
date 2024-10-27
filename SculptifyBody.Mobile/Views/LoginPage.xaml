@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SculptifyBody.Mobile.Views.LoginPage"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             Title="RegistrationPage"
+             Shell.NavBarIsVisible="False"
+             Shell.FlyoutBehavior="Disabled"
+             xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui">
+    
+    <Page.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource LoginPageStatusBarColor}" StatusBarStyle="DarkContent" />
+    </Page.Behaviors>
+    <VerticalStackLayout Spacing="10">
+        <Image Margin="20,60,20,40" Source="Images/dotnet_bot.png"/>
+        <Border Style="{DynamicResource EntryFormBorder}">
+            <telerik:RadEntry Style="{StaticResource LoginEntryFormEntry}" x:Name="EmailEntry" Placeholder="Enter Email" Text="{Binding Email}"/>
+        </Border>
+        <Border Style="{DynamicResource EntryFormBorder}">
+            <telerik:RadEntry Style="{StaticResource LoginEntryFormEntry}" x:Name="PasswordEntry" IsPassword="True" Placeholder="Enter Password" Text="{Binding Password}"/>
+        </Border>
+        <telerik:RadButton Text="Login" Clicked="OnLogin" FontSize="20" HeightRequest="75" Margin="20,0,20,60"/>
+        <Label Style="{StaticResource ProfileLabelStyle}" Text="Forgot Password" HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnForgotPassword"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Style="{StaticResource ProfileLabelStyle}" Text="Create New Account" HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSignUp"/>
+            </Label.GestureRecognizers>
+        </Label>
+    </VerticalStackLayout>
+</ContentPage>

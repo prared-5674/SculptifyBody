@@ -1,5 +1,4 @@
-﻿using SculptifyBody.Mobile.Views;
-namespace SculptifyBody
+﻿namespace SculptifyBody
 {
     public partial class App : Application
     {
@@ -9,7 +8,8 @@ namespace SculptifyBody
         {
             InitializeComponent();
             _serviceProvider = serviceProvider;
-            MainPage = _serviceProvider.GetRequiredService<SplashPage>();
+            MainPage = new AppShell();
+            //MainPage = _serviceProvider.GetRequiredService<SplashPage>();
         }
     }
 }

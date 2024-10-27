@@ -1,4 +1,6 @@
-﻿namespace SculptifyBody
+﻿using SculptifyBody.Mobile.Views;
+
+namespace SculptifyBody
 {
     public partial class AppShell : Shell
     {
@@ -6,11 +8,11 @@
         {
             InitializeComponent();
 
-            // Register your existing pages for navigation
-            Routing.RegisterRoute("splash", typeof(Mobile.Views.SplashPage));
-            //Routing.RegisterRoute("registration", typeof(Mobile.Views.RegistrationPage));
-            //Routing.RegisterRoute("login", typeof(Mobile.Views.LoginPage));
-            // Add any other routes you have
+            // Register your pages for navigation
+            Routing.RegisterRoute(nameof(SplashPage), typeof(SplashPage));
+            Routing.RegisterRoute(nameof(SignUpPage), typeof(SignUpPage));
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute(nameof(ForgotPasswordPage), typeof(ForgotPasswordPage));
         }
     }
 }

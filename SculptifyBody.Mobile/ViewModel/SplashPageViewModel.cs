@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using SculptifyBody.Mobile.Views;
 using SculptifyBody.SculptifyBody.Mobile.Interfaces;
 using System.Collections.ObjectModel;
 
@@ -33,7 +34,7 @@ namespace SculptifyBody.Mobile.ViewModels
         {
             try
             {
-                await _navigationService.NavigateToAsync("///registration");
+                await _navigationService.NavigateToAsync("//SignUpPage");
             }
             catch (Exception ex)
             {
@@ -44,18 +45,19 @@ namespace SculptifyBody.Mobile.ViewModels
             }
         }
 
+
         [RelayCommand]
         private async Task Login()
         {
             try
             {
-                await _navigationService.NavigateToAsync("///login");
+                await _navigationService.NavigateToAsync("//LoginPage");
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert(
+                await Shell.Current.DisplayAlert(
                     "Error",
-                    "Unable to proceed to login. Please try again.",
+                    "Unable to proceed with Login. Please try again.",
                     "OK");
             }
         }

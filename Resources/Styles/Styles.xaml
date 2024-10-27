@@ -169,6 +169,12 @@
         <Setter Property="RefreshControlColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Style TargetType="Label"  x:Key="ProfileLabelStyle">
+        <Setter Property="TextColor" Value="{DynamicResource ProfilePageTextColor}"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+    
     <Style TargetType="Picker">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
         <Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
@@ -303,6 +309,16 @@
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
     </Style>
 
+    <Style TargetType="telerik:RadEntry" x:Key="LoginEntryFormEntry">
+        <Setter Property="TextColor" Value="{DynamicResource PageEntryTextColor}"/>
+        <Setter Property="PlaceholderColor" Value="{DynamicResource PageEntryPlaceHolderColor}"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FocusedBorderThickness" Value="0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="10,10,10,10"/>
+    </Style>
+    
     <Style TargetType="Switch">
         <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
         <Setter Property="ThumbColor" Value="{StaticResource White}" />
