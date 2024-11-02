@@ -5,6 +5,7 @@ using SculptifyBody.Mobile.Views;
 using SculptifyBody.SculptifyBody.Mobile.Interfaces;
 using SculptifyBody.SculptifyBody.Mobile.Services;
 using SculptifyBody.SculptifyBody.Mobile.ViewModel;
+using SculptifyBody.SculptifyBody.Mobile.Views;
 using Telerik.Maui.Controls.Compatibility;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -34,11 +35,13 @@ namespace SculptifyBody
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<SignUpPage>();
             builder.Services.AddTransient<ForgotPasswordPage>();
+            builder.Services.AddTransient<MainOptionsPage>();
 
             // Register ViewModels
             builder.Services.AddTransient<SplashPageViewModel>();
             builder.Services.AddTransient<LoginPageViewModel>();
             builder.Services.AddTransient<SignUpViewModel>();
+            builder.Services.AddTransient<MainOptionsViewModel>();
 
             return builder.Build();
         }

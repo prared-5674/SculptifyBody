@@ -1,4 +1,5 @@
 ﻿using SculptifyBody.Mobile.Views;
+using SculptifyBody.SculptifyBody.Mobile.ViewModel;
 
 namespace SculptifyBody
 {
@@ -13,6 +14,7 @@ namespace SculptifyBody
             Routing.RegisterRoute(nameof(SignUpPage), typeof(SignUpPage));
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             Routing.RegisterRoute(nameof(ForgotPasswordPage), typeof(ForgotPasswordPage));
+            Routing.RegisterRoute(nameof(MainOptionsViewModel), typeof(MainOptionsViewModel));
         }
     }
 }
